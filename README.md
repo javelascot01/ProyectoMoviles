@@ -1,2 +1,2 @@
 # ProyectoMoviles
-Repositorio del proyecto de móviles
+Repositorio del proyecto de móviles (PIXEL 8)
