@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">Nature App</string>
     <string name="nature">Nature</string>
+    <string name="search_hint">Search for a route...</string>
+    <string name="explore">Explore</string>
+    <string name="elijeActividad">Choose your activity:</string>
+    <string name="selecionaste">You selected:</string>
+    <string name="error_seleccion">Please, select a valid option</string>
+    <string-array name="tipos_actividad">
+        <item />
+        <item>Hiking</item>
+        <item>Cycling</item>
+        <item>Swimming</item>
+    </string-array>
+    <string name="nombre">Name:</string>
+    <string name="descripcion">Description:</string>
+    <string name="distancia">Distance:</string>
+    <string name="dificultad">Difficulty:</string>
+    <string name="duracion">Duration:</string>
+    <string name="minutos">minutes</string>
 </resources>

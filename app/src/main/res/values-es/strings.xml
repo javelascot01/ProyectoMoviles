@@ -2,4 +2,22 @@
 <resources>
     <string name="app_name">Aplicación Naturaleza</string>
     <string name="nature">Naturaleza</string>
+    <string name="search_hint">Busca una ruta...</string>
+    <string name="explore">Explora</string>
+    <string name="elijeActividad">Elija su actividad:</string>
+    <string name="selecionaste">Seleccionaste:</string>
+    <string name="error_seleccion">Por favor, selecciona una opción válida</string>
+    <string-array name="tipos_actividad">
+        <item />
+        <item>Senderismo</item>
+        <item>Ciclismo</item>
+        <item>Natación</item>
+    </string-array>
+    <string name="nombre">Nombre:</string>
+    <string name="descripcion">Descripcion:</string>
+    <string name="distancia">Distancia:</string>
+    <string name="dificultad">Dificultad:</string>
+    <string name="duracion">Duracion:</string>
+    <string name="minutos">minutos</string>
+
 </resources>

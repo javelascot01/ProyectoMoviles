@@ -10,10 +10,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/arbol_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ProyectoJesusVelasco"
-        >
+        android:theme="@style/Theme.ProyectoJesusVelasco">
         <activity
-            android:name=".PantallaPrincipal"
+            android:name=".view.PantallaNatacion"
+            android:exported="false" />
+        <activity
+            android:name=".view.PantallaCiclismo"
+            android:exported="false" />
+        <activity
+            android:name=".view.PantallaSenderismo"
+            android:exported="false" />
+        <activity
+            android:name=".view.PantallaPrincipal"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
