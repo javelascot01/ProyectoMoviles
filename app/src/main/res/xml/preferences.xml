@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_checkbox"
+        android:summary="@string/sumario_notificaciones"
+        android:title="@string/habilitar_notificaciones" />
+    <EditTextPreference
+        android:background="@color/fondo_aplicacion"
+        android:backgroundTint="@color/fondo_aplicacion"
+        android:defaultValue="Usuario"
+        android:key="pref_texto"
+        android:summary="@string/introduce_usuario"
+        android:title="@string/nombre_de_usuario" />
+</PreferenceScreen>

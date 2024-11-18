@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo_aplicacion"
     tools:context=".view.PantallaSenderismo">
 
     <com.google.android.material.tabs.TabLayout
@@ -20,8 +21,49 @@
         android:id="@+id/viewPager2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout"/>
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="673dp" />
+
+    <Button
+        android:id="@+id/btnConsejos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:backgroundTint="@color/color_texto"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/consejos"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnVolver"
+        app:layout_constraintTop_toBottomOf="@+id/viewPager2" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:backgroundTint="@color/color_texto"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnConsejos"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

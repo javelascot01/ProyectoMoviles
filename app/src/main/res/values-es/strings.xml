@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Aplicación Naturaleza</string>
+    <string name="app_description">Una aplicacion para explorar la naturaleza en tu área</string>
+    <string name="version">Versión 1.0.0</string>
+    <string name="developer">Desarrollado por Jesús Velasco</string>
+    <string name="contact">Contacto: alexvelas23@gmail.com</string>
     <string name="nature">Naturaleza</string>
-    <string name="search_hint">Busca una ruta...</string>
+    <string name="search_hint">Busca una ruta…</string>
     <string name="explore">Explora</string>
     <string name="elijeActividad">Elija su actividad:</string>
     <string name="selecionaste">Seleccionaste:</string>
@@ -19,5 +23,19 @@
     <string name="dificultad">Dificultad:</string>
     <string name="duracion">Duracion:</string>
     <string name="minutos">minutos</string>
+    <string name="consejos">Consejos</string>
+    <string name="back">Volver</string>
+    <string-array name="consejos_senderismo">
+        <item> - Lleva suficiente agua para mantenerte hidratado.</item>
+        <item> - Usa calzado adecuado para evitar lesiones.</item>
+        <item> - Consulta el clima antes de salir para evitar sorpresas.</item>
+    </string-array>
+    <string name="webpageaccess">AccesoAPáginaWeb</string>
+    <string name="about">Acerca de</string>
+    <string name="preferences">Preferencias</string>
+    <string name="sumario_notificaciones">Recibir notificaciones sobre nuevas rutas</string>
+    <string name="habilitar_notificaciones">Habilitar notificaciones</string>
+    <string name="introduce_usuario">Introduce tu nombre de usuario</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
 
 </resources>

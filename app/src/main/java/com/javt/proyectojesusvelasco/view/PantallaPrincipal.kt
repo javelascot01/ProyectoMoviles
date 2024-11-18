@@ -1,11 +1,16 @@
 package com.javt.proyectojesusvelasco.view
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.MaterialToolbar
 import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.PantallaPrincipalBinding
 
@@ -21,7 +26,9 @@ class PantallaPrincipal : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) // Mejora el estilo al desplegar el spinner
         activitySpinner.adapter = adapter
 
-
+        val toolbar: MaterialToolbar =binding.toolbar
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)  // Muestra el icono de volver
         binding.exploreButton.setOnClickListener {
             val actividadSeleccionada= binding.spinnerActividades.selectedItem.toString();
 
@@ -73,4 +80,41 @@ class PantallaPrincipal : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_principal,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menuItemPaginaWeb -> {
+                val webpage: Uri =
+                    Uri.parse("https://www.spain.info/es/descubrir-espana/viaje-pueblos-castilla-mancha/")
+                val webintent = Intent(Intent.ACTION_VIEW, webpage)
+                startActivity(webintent)
+                true
+            }
+
+            R.id.menuItemAcercaDe -> {
+                val intent = Intent(this, AcercaDe::class.java)
+                startActivity(intent)
+                true
+            }
+
+            R.id.menuItemPreferencias -> {
+                binding.fragmentContainerView.visibility = View.VISIBLE
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView, SettingsFragment())
+                    .addToBackStack(null)
+                    .commit()
+                binding.exploreButton.setOnClickListener {
+                    onBackPressed()
+                }
+                true
+            }
+
+            else -> false
+        }
+
+    }
 }

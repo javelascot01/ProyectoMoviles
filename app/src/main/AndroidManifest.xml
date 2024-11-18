@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoJesusVelasco">
         <activity
+            android:name=".view.AcercaDe"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConsejosSenderismo"
+            android:exported="false" />
+        <activity
             android:name=".view.PantallaNatacion"
             android:exported="false" />
         <activity

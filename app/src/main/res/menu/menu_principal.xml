@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuItemPaginaWeb"
+        android:icon="@drawable/baseline_web_24"
+        android:title="@string/webpageaccess"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/menuItemAcercaDe"
+        android:icon="@drawable/baseline_info_24"
+        android:title="@string/about"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menuItemPreferencias"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="@string/preferences"
+        app:showAsAction="always|withText" />
+</menu>

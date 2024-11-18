@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Nature App</string>
+    <string name="app_description">An app to explore nature in your area</string>
+    <string name="version">Version 1.0.0</string>
+    <string name="developer">Developed by Jesús Velasco</string>
+    <string name="contact">Contact: alexvelas23@gmail.com</string>
+
     <string name="nature">Nature</string>
-    <string name="search_hint">Search for a route...</string>
+    <string name="search_hint">Search for a route…</string>
     <string name="explore">Explore</string>
     <string name="elijeActividad">Choose your activity:</string>
     <string name="selecionaste">You selected:</string>
@@ -18,4 +23,32 @@
     <string name="dificultad">Difficulty:</string>
     <string name="duracion">Duration:</string>
     <string name="minutos">minutes</string>
+    <string name="consejos">Advices</string>
+    <string name="back">Back</string>
+    <string name="webpageaccess">WebPageAccess</string>
+    <string name="about">About</string>
+    <string name="preferences">Preferences</string>
+    <string name="sumario_notificaciones">Get notifications about new routes</string>
+    <string name="habilitar_notificaciones">Set on notifications</string>
+    <string name="introduce_usuario">Introduce your user name</string>
+    <string name="nombre_de_usuario">User name</string>
+    <string-array name="consejos_senderismo">
+        <item> - Carry enough water to stay hydrated.</item>
+        <item> - Wear proper footwear to prevent injuries.</item>
+        <item> - Check the weather forecast before heading out.</item>
+    </string-array>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

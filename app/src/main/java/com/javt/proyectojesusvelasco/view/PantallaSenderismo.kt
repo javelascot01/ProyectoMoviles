@@ -1,13 +1,16 @@
 package com.javt.proyectojesusvelasco.view
 
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.ActivityPantallaSenderismoBinding
 import com.javt.proyectojesusvelasco.viewModel.RutasSenderismoViewModel
 
@@ -38,6 +41,17 @@ class PantallaSenderismo : AppCompatActivity() {
                 // Asignamos dinámicamente el nombre de la ruta en cada tab
                 tab.text = rutas[index].nombre
             }.attach()
+            //Muestro el boton consejos
+            binding.btnConsejos.visibility= View.VISIBLE;
+            binding.btnConsejos.setOnClickListener {
+                val consejos = resources.getStringArray(R.array.consejos_senderismo).toList()
+                val intent= Intent(this,ConsejosSenderismo::class.java)
+                intent.putStringArrayListExtra("consejos",ArrayList(consejos))
+                startActivity(intent)
+            }
+            binding.btnVolver.setOnClickListener {
+                finish(); //Volver
+            }
         }
 
 
