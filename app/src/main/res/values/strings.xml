@@ -52,4 +52,8 @@
     <string name="cancelar">Cancel</string>
     <string name="no_hay_rutas_disponibles">No routes avaliable</string>
     <string name="agregar_ruta">Add route</string>
+    <string name="pantalla_en_desarrollo">View in development</string>
+    <string name="you_selected_hiking">You selected hiking</string>
+    <string name="you_selected_cycling">You selected Cycling</string>
+    <string name="you_selected_swimming">You selected Swimming</string>
 </resources>

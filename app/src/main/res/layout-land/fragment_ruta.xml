@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="365dp" />
+        app:layout_constraintGuide_begin="205dp" />
 
     <TextView
         android:id="@+id/lblDescripcionRuta"
@@ -63,10 +63,14 @@
 
     <TextView
         android:id="@+id/txtDescripcionRuta"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/fondo_aplicacion_oscuro"
+        android:backgroundTint="@color/fondo_aplicacion_oscuro"
         android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/color_texto"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/txtDistanciaRuta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -74,35 +78,44 @@
 
     <TextView
         android:id="@+id/txtDistanciaRuta"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@color/fondo_aplicacion_oscuro"
+        android:backgroundTint="@color/fondo_aplicacion_oscuro"
         android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/color_texto"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/txtDificultadRuta"
         app:layout_constraintEnd_toEndOf="@+id/txtDescripcionRuta"
-        app:layout_constraintStart_toStartOf="@+id/txtDescripcionRuta"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/txtDescripcionRuta" />
 
     <TextView
         android:id="@+id/txtDificultadRuta"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@color/fondo_aplicacion_oscuro"
+        android:backgroundTint="@color/fondo_aplicacion_oscuro"
         android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/color_texto"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/txtDuracionRuta"
         app:layout_constraintEnd_toEndOf="@+id/txtDistanciaRuta"
-        app:layout_constraintStart_toStartOf="@+id/txtDistanciaRuta"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/txtDistanciaRuta" />
 
     <TextView
         android:id="@+id/txtDuracionRuta"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@color/fondo_aplicacion_oscuro"
+        android:backgroundTint="@color/fondo_aplicacion_oscuro"
         android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/color_texto"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txtDificultadRuta"
-        app:layout_constraintStart_toStartOf="@+id/txtDificultadRuta"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/txtDificultadRuta" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -110,5 +123,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="124dp" />
+        app:layout_constraintGuide_percent="0.4" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_0804389_4569589" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

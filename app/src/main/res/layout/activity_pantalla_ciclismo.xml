@@ -5,6 +5,46 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo_aplicacion_oscuro"
+    android:backgroundTintMode="multiply"
     tools:context=".view.PantallaCiclismo">
 
+    <TextView
+        android:id="@+id/txtDesarrollo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/pantalla_en_desarrollo"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="483dp" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_texto"
+        android:backgroundTintMode="src_in"
+        android:outlineAmbientShadowColor="@color/black"
+        android:outlineProvider="paddedBounds"
+        android:outlineSpotShadowColor="@color/black"
+        android:text="@string/back"
+        app:icon="@drawable/baseline_arrow_back_24"
+        app:iconGravity="start"
+        app:iconPadding="4dp"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline12" />
 </androidx.constraintlayout.widget.ConstraintLayout>

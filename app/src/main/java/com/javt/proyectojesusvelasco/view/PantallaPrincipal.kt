@@ -116,18 +116,18 @@ class PantallaPrincipal : AppCompatActivity() {
             when (actividadSeleccionada) {
                 actividades[1] -> {
                     startActivity(Intent(this, PantallaSenderismo::class.java))
-                    Toast.makeText(this, "Has seleccionado Hiking (Senderismo)", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.you_selected_hiking), Toast.LENGTH_SHORT).show()
                 }
                 actividades[2] -> {
                     startActivity(Intent(this, PantallaCiclismo::class.java))
-                    Toast.makeText(this, "Has seleccionado Cycling (Ciclismo)", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.you_selected_cycling), Toast.LENGTH_SHORT).show()
                 }
                 actividades[3] -> {
                     startActivity(Intent(this, PantallaNatacion::class.java))
-                    Toast.makeText(this, "Has seleccionado Swimming (Natación)", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.you_selected_swimming), Toast.LENGTH_SHORT).show()
                 }
                 else -> {
-                    Toast.makeText(this, "Por favor, selecciona una actividad válida", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.error_seleccion, Toast.LENGTH_SHORT).show()
                     Log.w("PantallaPrincipal", "Actividad invalida")
                 }
             }

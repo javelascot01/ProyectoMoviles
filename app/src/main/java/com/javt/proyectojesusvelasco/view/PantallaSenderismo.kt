@@ -77,8 +77,7 @@ class PantallaSenderismo : AppCompatActivity() {
 
         // Funcionalidad del botón Volver
         binding.btnVolver.setOnClickListener {
-            viewModel.agregarRuta(RutasSenderismo("asd","1asd","12","Hard",12))
-            //finish() // Volver a la pantalla anterior
+            finish() // Volver a la pantalla anterior
         }
 
         // Funcionalidad del botón Agregar Ruta
