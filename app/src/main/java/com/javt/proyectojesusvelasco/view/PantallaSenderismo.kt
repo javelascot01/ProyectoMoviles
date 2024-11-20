@@ -38,29 +38,29 @@ class PantallaSenderismo : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        // Inicializar las rutas y agregarlas al ViewModel
+        // Inicializo las rutas y las agregos al ViewModel
         inicializarRutas()
 
         // Inicializo el TabLayout y ViewPager2
         tabLayout = binding.tabLayout
         viewPager2 = binding.viewPager2
 
-        // Configurar el adaptador para el ViewPager2
+        // Configuro el adaptador para el ViewPager2
         adapter = PagerAdapter(this, viewModel.obtenerRutas())
         viewPager2.adapter = adapter
 
-        // Configurar el TabLayout con el ViewPager2
+        // Configuro el TabLayout con el ViewPager2
         TabLayoutMediator(tabLayout, viewPager2) { tab, index ->
             tab.text = viewModel.obtenerRutas()[index].nombre
         }.attach()
 
         viewModel.rutas.observe(this) { rutas ->
-            // Actualizar el adaptador cuando las rutas cambian
+            // Actualizo el adaptador cuando las rutas cambian
             adapter = PagerAdapter(this, viewModel.obtenerRutas())
             viewPager2.adapter = adapter
             adapter.updateRutas(rutas)
 
-            // Actualizar los tabs
+            // Actualizo los tabs
             TabLayoutMediator(tabLayout, viewPager2) { tab, index ->
                 tab.text = rutas[index].nombre
             }.attach()
@@ -91,8 +91,8 @@ class PantallaSenderismo : AppCompatActivity() {
      * Inicializa las rutas y las agrega al ViewModel
      */
     private fun inicializarRutas() {
-        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_montania), getString(R.string.desc_montana), "8 km", getString(R.string.dif_dificil), 180))
-        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_lago), getString(R.string.desc_lago), "6 km", getString(R.string.dif_moderada), 150))
-        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_bosque), getString(R.string.desc_bosque), "5 km", getString(R.string.dif_facil), 120))
+        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_montania), getString(R.string.desc_montana), "8", getString(R.string.dif_dificil), 180))
+        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_lago), getString(R.string.desc_lago), "6", getString(R.string.dif_moderada), 150))
+        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_bosque), getString(R.string.desc_bosque), "5", getString(R.string.dif_facil), 120))
     }
 }

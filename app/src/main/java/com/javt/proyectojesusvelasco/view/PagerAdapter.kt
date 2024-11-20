@@ -15,6 +15,6 @@ class PagerAdapter(fragmentActivity: FragmentActivity, private var rutas: List<R
     }
     fun updateRutas(nuevasRutas: List<RutasSenderismo>) {
         rutas = nuevasRutas
-        notifyDataSetChanged() // Notificar que los datos han cambiado
+        notifyDataSetChanged() // Notificar al adaptador que los datos han cambiado
     }
 }

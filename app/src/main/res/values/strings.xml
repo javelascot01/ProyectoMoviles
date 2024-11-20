@@ -56,4 +56,6 @@
     <string name="you_selected_hiking">You selected hiking</string>
     <string name="you_selected_cycling">You selected Cycling</string>
     <string name="you_selected_swimming">You selected Swimming</string>
+    <string name="km">" km"</string>
+    <string name="webpage_github">https://github.com/javelascot01/ProyectoMoviles</string>
 </resources>

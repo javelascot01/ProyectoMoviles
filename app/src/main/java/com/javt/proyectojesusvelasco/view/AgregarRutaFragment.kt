@@ -1,27 +1,20 @@
 package com.javt.proyectojesusvelasco.view
 
-import android.app.Activity.RESULT_OK
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.FragmentAgregarRutaBinding
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
-import com.javt.proyectojesusvelasco.viewModel.RutasSenderismoViewModel
 
 
 class AgregarRutaFragment : Fragment() {
+
     private lateinit var binding: FragmentAgregarRutaBinding
-    private val rutasViewModel: RutasSenderismoViewModel by activityViewModels()
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,12 +23,13 @@ class AgregarRutaFragment : Fragment() {
         binding = FragmentAgregarRutaBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        // Configuro el botón para guardar la nueva ruta
         binding.btnGuardar.setOnClickListener {
             val nombre = binding.etNombre.text.toString()
             val descripcion = binding.etDescripcion.text.toString()
             val distancia = binding.etDistancia.text.toString()
 
-            // Validar dificultad
+            // Validar dificultad según los radioButton
             val dificultad = when (binding.rgDificultad.checkedRadioButtonId) {
                 R.id.rbFacil -> getString(R.string.dif_facil)
                 R.id.rbModerada -> getString(R.string.dif_moderada)
@@ -52,16 +46,16 @@ class AgregarRutaFragment : Fragment() {
             } else {
                 // Crear la nueva ruta y agregarla al viewModel
                 val nuevaRuta = RutasSenderismo(nombre, descripcion, distancia, dificultad, duracion)
-
+                // Envio la ruta a la activity para que la cree mediante el launcher
                 val intent = activity?.intent
                 intent?.putExtra("nuevaRuta", nuevaRuta)
                 activity?.setResult(AppCompatActivity.RESULT_OK, intent)
-                // cerrar fragmento
+                // Cerrar fragmento
                 activity?.finish()
             }
         }
 
-        // Configurar el botón de cancelar
+        // Configuro el botón de cancelar
         binding.btnCancelar.setOnClickListener {
             activity?.finish()
         }

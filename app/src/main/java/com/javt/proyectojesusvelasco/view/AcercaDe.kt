@@ -9,6 +9,7 @@ import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.ActivityAcercaDeBinding
 import com.javt.proyectojesusvelasco.databinding.ActivityConsejosSenderismoBinding
 
+// Esta es la actividad que muestra la pantalla "Acerca de" en la aplicación
 class AcercaDe : AppCompatActivity() {
     private lateinit var binding: ActivityAcercaDeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,7 @@ class AcercaDe : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityAcercaDeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        // Creo un array con la información que quiero mostrar en la pantalla
         val acercaDeInfo=arrayOf(
             getString(R.string.app_name),
             getString(R.string.app_description),
@@ -23,7 +25,9 @@ class AcercaDe : AppCompatActivity() {
             getString(R.string.developer),
             getString(R.string.contact)
         )
+        //Lo convierto en string separando con saltos de linea
         binding.txtAcercaDe1.text = acercaDeInfo.joinToString("\n")
+        // Botón de cerrar aplicación
         binding.btnVolver.setOnClickListener(){
             finish() // Cierra la actividad actual y regresa a la anterior
         }

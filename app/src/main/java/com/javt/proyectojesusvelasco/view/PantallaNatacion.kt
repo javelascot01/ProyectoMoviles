@@ -14,7 +14,7 @@ class PantallaNatacion : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityPantallaNatacionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        // Botón de volver
         binding.btnVolver.setOnClickListener {
             finish();
         }

@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.ActivityContenedorFragmentAgregarRutaBinding
 
+// Esta es la actividad contiene un fragmento para agregar una nueva ruta
 class ContenedorFragmentAgregarRuta : AppCompatActivity() {
     private lateinit var binding : ActivityContenedorFragmentAgregarRutaBinding
     override fun onCreate(savedInstanceState: Bundle?) {

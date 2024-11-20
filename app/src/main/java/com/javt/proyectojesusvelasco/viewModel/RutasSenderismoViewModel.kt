@@ -23,6 +23,6 @@ class RutasSenderismoViewModel : ViewModel() {
         // Añadir la ruta a la lista actual
         val nuevaLista = _rutas.value ?: mutableListOf()
         nuevaLista.add(ruta)
-        _rutas.value = nuevaLista
+        _rutas.value = nuevaLista // Esto notificará a los observadores
     }
 }

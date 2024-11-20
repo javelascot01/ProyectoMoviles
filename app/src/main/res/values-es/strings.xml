@@ -56,5 +56,7 @@
     <string name="you_selected_hiking">Has seleccionado Senderismo</string>
     <string name="you_selected_cycling">Has seleccionado Ciclismo</string>
     <string name="you_selected_swimming">Has seleccionado Natación</string>
+    <string name="km">" km"</string>
+    <string name="webpage_github">https://github.com/javelascot01/ProyectoMoviles</string>
 
 </resources>

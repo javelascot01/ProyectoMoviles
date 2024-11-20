@@ -16,14 +16,21 @@ class RutaFragment(private val ruta: RutasSenderismo) : Fragment(R.layout.fragme
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentRutaBinding.inflate(inflater, container, false)
         val view = binding.root
-        // Configuramos los datos de la ruta en el layout
+        // Configuro los datos de la ruta en el layout
         binding.txtDescripcionRuta.text = ruta.descripcion
-        binding.txtDistanciaRuta.text = ruta.distancia
+        binding.txtDistanciaRuta.text = buildString { // Concatenación de cadenas recomendado por el ide
+            append(ruta.distancia)
+            append(getString(R.string.km))
+        }
         binding.txtDificultadRuta.text = ruta.dificultad
-        binding.txtDuracionRuta.text = ruta.duracion.toString()+" "+getString(R.string.minutos)
+        binding.txtDuracionRuta.text = buildString { // Concatenación de cadenas recomendado por el ide
+            append(ruta.duracion.toString())
+            append(" ")
+            append(getString(R.string.minutos))
+        }
 
         return view
     }
