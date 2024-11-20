@@ -98,12 +98,12 @@ class PantallaPrincipal : AppCompatActivity() {
         }
 
     }
-    // Este método se llama cuando la actividad está en primer plano, y actualiza el título con el nombre del usuario
+    /* Este método se llama cuando la actividad está en primer plano, y actualiza el título con el nombre del usuario */
     override fun onResume() {
         super.onResume()
         actualizarTituloUsuario()
     }
-    // Actualizo el título de el toolbar con el nombre del usuario guardado en preferencias
+    /* Actualizo el título de el toolbar con el nombre del usuario guardado en preferencias */
     private fun actualizarTituloUsuario() {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val userName = sharedPreferences.getString("pref_texto", getString(R.string.usuario))
