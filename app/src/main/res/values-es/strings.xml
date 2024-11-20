@@ -37,5 +37,20 @@
     <string name="habilitar_notificaciones">Habilitar notificaciones</string>
     <string name="introduce_usuario">Introduce tu nombre de usuario</string>
     <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="usuario">Usuario</string>
+    <string name="preferences_saved">Preferencias guardadas</string>
+    <string name="ruta_bosque">Ruta Bosque</string>
+    <string name="ruta_montania">Ruta Montaña</string>
+    <string name="ruta_lago">Ruta Lago</string>
+    <string name="desc_montana">Desafiante ruta en la montaña</string>
+    <string name="dif_dificil">Difícil</string>
+    <string name="desc_lago">Ruta alrededor de un lago</string>
+    <string name="dif_moderada">Moderada</string>
+    <string name="desc_bosque">Hermosa ruta en el bosque</string>
+    <string name="dif_facil">Fácil</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="no_hay_rutas_disponibles">No hay rutas disponibles</string>
+    <string name="agregar_ruta">Agregar ruta</string>
 
 </resources>

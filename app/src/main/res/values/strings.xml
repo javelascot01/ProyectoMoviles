@@ -37,18 +37,19 @@
         <item> - Wear proper footwear to prevent injuries.</item>
         <item> - Check the weather forecast before heading out.</item>
     </string-array>
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="usuario">User</string>
+    <string name="preferences_saved">Preferences saved</string>
+    <string name="ruta_bosque">Forest Route</string>
+    <string name="ruta_montania">Mountain Route</string>
+    <string name="ruta_lago">Lake Route</string>
+    <string name="desc_montana">Challenging route in the mountains</string>
+    <string name="dif_dificil">Hard</string>
+    <string name="desc_lago">Route around a lake</string>
+    <string name="dif_moderada">Moderate</string>
+    <string name="desc_bosque">Beautiful route in the forest</string>
+    <string name="dif_facil">Easy</string>
+    <string name="guardar">Save</string>
+    <string name="cancelar">Cancel</string>
+    <string name="no_hay_rutas_disponibles">No routes avaliable</string>
+    <string name="agregar_ruta">Add route</string>
 </resources>

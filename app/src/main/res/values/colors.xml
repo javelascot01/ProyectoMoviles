@@ -5,4 +5,5 @@
     <color name="fondo_aplicacion">#8BC34A</color>
     <color name="fondo_aplicacion_oscuro">#215226</color>
     <color name="color_texto">#795548</color>
+    <color name="hint">#A3FFFFFF</color>
 </resources>

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoJesusVelasco">
         <activity
+            android:name=".view.ContenedorFragmentAgregarRuta"
+            android:exported="false" />
+        <activity
             android:name=".view.AcercaDe"
             android:exported="false" />
         <activity
@@ -25,6 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".view.PantallaSenderismo"
+            android:configChanges="keyboardHidden|screenSize"
             android:exported="false" />
         <activity
             android:name=".view.PantallaPrincipal"
