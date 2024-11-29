@@ -1,6 +1,6 @@
 # NatureApp 🥾🌄
 
-**Senderismo Fácil** es una aplicación móvil diseñada para los amantes del senderismo que desean gestionar rutas de senderismo, obtener consejos útiles y mejorar su experiencia al aire libre. La aplicación permite agregar, ver y organizar rutas con detalles como la dificultad, la duración y la descripción de la ruta.
+**NatureApp** es una aplicación móvil diseñada para los amantes del senderismo que desean gestionar rutas de senderismo, obtener consejos útiles y mejorar su experiencia al aire libre. La aplicación permite agregar, ver y organizar rutas con detalles como la dificultad, la duración y la descripción de la ruta.
 
 ---
 
