@@ -20,8 +20,8 @@
 
 ---
 ## Contacto 📬
-Autor: Jesús Velasco
-Email: alexvelas23@gmail.com
-GitHub: github.com/javelascot01
+- **Autor: Jesús Velasco
+- **Email: alexvelas23@gmail.com
+- **GitHub: github.com/javelascot01
 ---
 
