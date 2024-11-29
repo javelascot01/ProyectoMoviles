@@ -4,11 +4,14 @@
 
 ---
 
-## To-Do List
-- [x] Interfaz básica
-- [ ] Implementación de persistencia
+## To-Do List 🗒️
+
+- [x] Crear la interfaz principal
+- [ ] Agregar soporte para múltiples rutas
+- [ ] Mejorar la experiencia de usuario
 
 ---
+
 ## Funcionalidades 🚀
 
 - **Ver rutas de senderismo:** Muestra una lista de rutas de senderismo con detalles como el nombre, descripción, distancia, dificultad y duración.
@@ -18,15 +21,17 @@
 
 ---
 
-## Requisitos 🗒️
+## Requisitos 📱
 
 - **Android Studio**: Para desarrollar y probar la aplicación.
 - **Dispositivo**: El proyecto se ha probado en un dispositivo Pixel 8 ✅
+- **Android Version**: Android 12 o superior.
 
 ---
-## Contacto 📬
-- **Autor**: Jesús Velasco
-- **Email**: alexvelas23@gmail.com
-- **GitHub**: github.com/javelascot01
----
 
+## Instalación 🔧
+
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone https://github.com/javelascot01/ProyectoMoviles.git
