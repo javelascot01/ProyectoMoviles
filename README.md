@@ -1,10 +1,10 @@
-# Senderismo Fácil
+# NatureApp 🥾🌄
 
 **Senderismo Fácil** es una aplicación móvil diseñada para los amantes del senderismo que desean gestionar rutas de senderismo, obtener consejos útiles y mejorar su experiencia al aire libre. La aplicación permite agregar, ver y organizar rutas con detalles como la dificultad, la duración y la descripción de la ruta.
 
 ---
 
-## Funcionalidades
+## Funcionalidades 🚀
 
 - **Ver rutas de senderismo:** Muestra una lista de rutas de senderismo con detalles como el nombre, descripción, distancia, dificultad y duración.
 - **Agregar nuevas rutas:** Permite al usuario agregar rutas personalizadas con información detallada.
@@ -16,15 +16,12 @@
 ## Requisitos
 
 - **Android Studio**: Para desarrollar y probar la aplicación.
-- **Dispositivo**: El proyecto se ha probado en un dispositivo Samsung Galaxy S21 con Android 12.
+- **Dispositivo**: El proyecto se ha probado en un dispositivo Pixel 8 ✅
 
 ---
+## Contacto 📬
+Autor: Jesús Velasco
+Email: alexvelas23@gmail.com
+GitHub: github.com/javelascot01
+---
 
-## Instalación
-
-### 1. Clonar el Repositorio
-
-Para comenzar, clona este repositorio en tu máquina local:
-
-```bash
-git clone https://github.com/usuario/proyectojesusvelasco.git
