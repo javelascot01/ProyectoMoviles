@@ -4,6 +4,11 @@
 
 ---
 
+## To-Do List
+- [x] Interfaz básica
+- [ ] Implementación de persistencia
+
+---
 ## Funcionalidades 🚀
 
 - **Ver rutas de senderismo:** Muestra una lista de rutas de senderismo con detalles como el nombre, descripción, distancia, dificultad y duración.
