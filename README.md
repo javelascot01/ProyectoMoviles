@@ -13,7 +13,7 @@
 
 ---
 
-## Requisitos
+## Requisitos 🗒️
 
 - **Android Studio**: Para desarrollar y probar la aplicación.
 - **Dispositivo**: El proyecto se ha probado en un dispositivo Pixel 8 ✅
