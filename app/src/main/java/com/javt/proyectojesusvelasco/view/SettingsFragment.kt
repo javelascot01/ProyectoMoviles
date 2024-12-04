@@ -18,7 +18,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         super.onResume()
         preferenceManager.sharedPreferences?.registerOnSharedPreferenceChangeListener (this)
     }
-    // Método llamado cuando el fragmento pasa a segundo plano
+    // Metodo llamado cuando el fragmento pasa a segundo plano
     override fun onPause() {
         super.onPause()
         preferenceManager.sharedPreferences?.unregisterOnSharedPreferenceChangeListener(this)
