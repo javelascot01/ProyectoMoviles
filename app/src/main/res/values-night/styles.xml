@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyAlertDialogTheme" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:background">@color/fondo_aplicacion_oscuro</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/MyButtonStyle</item>
+        <item name="android:negativeButtonText">@color/white</item>
+        <item name="android:positiveButtonText">@color/white</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/MyButtonStyle</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/MyButtonStyle</item>
+        <item name="android:textAppearanceButton">@style/MyButtonStyle</item>
+    </style>
+
+    <!-- Estilo para los botones en el diálogo -->
+    <style name="MyButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
