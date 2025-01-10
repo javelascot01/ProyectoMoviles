@@ -3,16 +3,15 @@ package com.javt.proyectojesusvelasco.view
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.ActivityPantallaSenderismoBinding
+import com.javt.proyectojesusvelasco.model.Dificultad
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
 import com.javt.proyectojesusvelasco.viewModel.RutasSenderismoViewModel
 
@@ -91,8 +90,24 @@ class PantallaSenderismo : AppCompatActivity() {
      * Inicializa las rutas y las agrega al ViewModel
      */
     private fun inicializarRutas() {
-        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_montania), getString(R.string.desc_montana), "8", getString(R.string.dif_dificil), 180))
-        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_lago), getString(R.string.desc_lago), "6", getString(R.string.dif_moderada), 150))
-        viewModel.agregarRuta(RutasSenderismo(getString(R.string.ruta_bosque), getString(R.string.desc_bosque), "5", getString(R.string.dif_facil), 120))
+        viewModel.agregarRuta(RutasSenderismo(1,
+            getString(R.string.ruta_montania),
+            getString(R.string.desc_montana),
+            "8",
+            Dificultad.FACIL,
+            180))
+
+        viewModel.agregarRuta(RutasSenderismo(2,
+            getString(R.string.ruta_lago),
+            getString(R.string.desc_lago),
+            "6",
+            Dificultad.DIFICIL, 150))
+
+        viewModel.agregarRuta(RutasSenderismo(3,
+            getString(R.string.ruta_bosque),
+            getString(R.string.desc_bosque),
+            "5",
+            Dificultad.MEDIA,
+            120))
     }
 }

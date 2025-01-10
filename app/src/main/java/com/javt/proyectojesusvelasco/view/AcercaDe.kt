@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.ActivityAcercaDeBinding
 import com.javt.proyectojesusvelasco.databinding.ActivityConsejosSenderismoBinding
+import com.javt.proyectojesusvelasco.model.Dificultad
 
 // Esta es la actividad que muestra la pantalla "Acerca de" en la aplicación
 class AcercaDe : AppCompatActivity() {

@@ -55,52 +55,10 @@
         android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#A3FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/rgDificultad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripcion" />
-
-    <RadioGroup
-        android:id="@+id/rgDificultad"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:checkedButton="@id/rbFacil"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/etDuracion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDistancia">
-
-        <RadioButton
-            android:id="@+id/rbFacil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="@string/dif_facil"
-            android:textColor="@color/color_texto"
-            android:textColorLink="@color/color_texto" />
-
-        <RadioButton
-            android:id="@+id/rbModerada"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="@string/dif_moderada"
-            android:textColor="@color/color_texto"
-            android:textColorLink="@color/color_texto" />
-
-        <RadioButton
-            android:id="@+id/rbDificil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="@string/dif_dificil"
-            android:textColor="@color/color_texto"
-            android:textColorLink="@color/color_texto" />
-    </RadioGroup>
 
 
     <EditText
@@ -118,8 +76,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgDificultad" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnGuardar"
@@ -151,6 +108,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/etDuracion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDistancia" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

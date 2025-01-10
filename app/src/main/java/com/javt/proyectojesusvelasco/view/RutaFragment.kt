@@ -25,7 +25,7 @@ class RutaFragment(private val ruta: RutasSenderismo) : Fragment(R.layout.fragme
             append(ruta.distancia)
             append(getString(R.string.km))
         }
-        binding.txtDificultadRuta.text = ruta.dificultad
+        binding.txtDificultadRuta.text = ruta.dificultad.aString(this.requireContext())
         binding.txtDuracionRuta.text = buildString { // Concatenación de cadenas recomendado por el ide
             append(ruta.duracion.toString())
             append(" ")

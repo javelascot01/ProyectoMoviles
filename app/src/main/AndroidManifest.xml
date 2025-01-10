@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoJesusVelasco">
         <activity
-            android:name=".view.PantallaPrincipal"
+            android:name=".view.AlertDialogEj"
             android:exported="false" />
         <activity
             android:name=".view.ContenedorFragmentAgregarRuta"
@@ -34,7 +34,7 @@
             android:configChanges="keyboardHidden|screenSize"
             android:exported="false" />
         <activity
-            android:name=".view.AlertDialogEj"
+            android:name=".view.PantallaPrincipal"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
