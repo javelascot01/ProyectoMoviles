@@ -5,6 +5,7 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:textColor">@color/color_texto</item>
         <item name="android:textStyle">bold</item>
+
         <item name="android:buttonStyle">@style/MyButtonStyle</item>
     </style>
     <style name="Theme.ProyectoJesusVelasco" parent="Base.Theme.ProyectoJesusVelasco" />
