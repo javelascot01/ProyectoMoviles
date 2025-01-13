@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
 import com.javt.proyectojesusvelasco.R
 
-class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
+class   SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
 
     // Método que se llama cuando se crea el fragmento de preferencias
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
@@ -28,7 +28,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when(key){
             "pref_checkbox" ->{
-                val isNotificationEnabled = sharedPreferences?.getBoolean(key, true) ?: true
+                val isDarkThemeEnabled = sharedPreferences?.getBoolean(key, true) ?: true
             }
             "pref_texto"->{
                 val userName = sharedPreferences?.getString(key, getString(R.string.usuario)) ?: getString(R.string.usuario)

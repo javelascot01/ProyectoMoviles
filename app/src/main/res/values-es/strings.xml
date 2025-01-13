@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="acerca_de">
+        <item>Nature App</item>
+        <item>Una aplicacion para explorar la naturaleza en tu área</item>
+        <item>Version 1.0.0</item>
+        <item>DDesarrollado por Jesús Velasco</item>
+        <item>Contacto: alexvelas23@gmail.com</item>
+    </string-array>
     <string name="app_name">Nature App</string>
     <string name="app_description">Una aplicacion para explorar la naturaleza en tu área</string>
     <string name="version">Versión 1.0.0</string>
@@ -12,7 +19,7 @@
     <string name="selecionaste">Seleccionaste:</string>
     <string name="error_seleccion">Por favor, selecciona una opción válida</string>
     <string-array name="tipos_actividad">
-        <item />
+        <item>Selecciona una opción válida</item>
         <item>Senderismo</item>
         <item>Ciclismo</item>
         <item>Natación</item>
@@ -58,5 +65,7 @@
     <string name="you_selected_swimming">Has seleccionado Natación</string>
     <string name="km">" km"</string>
     <string name="webpage_github">https://github.com/javelascot01/ProyectoMoviles</string>
+    <string name="nigth_theme">Modo noche</string>
+    <string name="enable_night_theme">Activar modo noche</string>
 
 </resources>

@@ -3,8 +3,8 @@
     <CheckBoxPreference
         android:defaultValue="true"
         android:key="pref_checkbox"
-        android:summary="@string/sumario_notificaciones"
-        android:title="@string/habilitar_notificaciones" />
+        android:summary="@string/nigth_theme"
+        android:title="@string/enable_night_theme" />
     <EditTextPreference
         android:background="@color/fondo_aplicacion"
         android:backgroundTint="@color/fondo_aplicacion"

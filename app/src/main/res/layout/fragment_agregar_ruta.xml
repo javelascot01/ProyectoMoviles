@@ -18,12 +18,15 @@
         android:hint="@string/nombre"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColorHint="#A3FFFFFF"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/etDescripcion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/etDescripcion"
@@ -36,7 +39,9 @@
         android:hint="@string/descripcion"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColorHint="#A3FFFFFF"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/etDistancia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -54,29 +59,36 @@
         android:hint="@string/distancia"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColorHint="#A3FFFFFF"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripcion" />
-
 
     <EditText
         android:id="@+id/etDuracion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20sp"
+        android:layout_marginTop="92dp"
         android:layout_marginRight="20sp"
+        android:layout_marginBottom="20dp"
         android:background="@color/fondo_aplicacion_oscuro"
         android:fontFamily="@font/montserrat_regular"
         android:hint="@string/duracion"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColorHint="#A3FFFFFF"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
     <Button
         android:id="@+id/btnGuardar"
@@ -107,16 +119,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.8508892" />
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/etDuracion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDistancia" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B42828"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.60"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

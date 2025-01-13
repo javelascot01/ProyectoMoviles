@@ -1,5 +1,6 @@
 package com.javt.proyectojesusvelasco.view
 
+import android.app.UiModeManager.MODE_NIGHT_YES
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.MaterialToolbar
 import com.javt.proyectojesusvelasco.R
@@ -23,6 +25,7 @@ class PantallaPrincipal : AppCompatActivity() {
     private var isInPreferences = false // Variable para controlar si estoy en preferencias
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         binding = PantallaPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // Configurar el spinner con las actividades disponibles
@@ -37,7 +40,7 @@ class PantallaPrincipal : AppCompatActivity() {
         // Inicializo SharedPreferences para leer los valores guardados
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         // Leer el valor de las preferencias
-        val isNotificationEnabled = sharedPreferences.getBoolean("pref_checkbox", true)
+        val isDarkThemeEnabled = sharedPreferences.getBoolean("pref_checkbox", false)
         val userName = sharedPreferences.getString("pref_texto", getString(R.string.usuario))
 
         // Configurar el toolbar
@@ -84,14 +87,20 @@ class PantallaPrincipal : AppCompatActivity() {
 
             // Preferencias
             R.id.menuItemPreferencias -> {
-                binding.fragmentContainerView.visibility = View.VISIBLE
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, SettingsFragment())
-                    .addToBackStack(null)
-                    .commit()
-                binding.exploreButton.text = getString(R.string.back)
-                isInPreferences = true
-                true
+                if(isInPreferences){
+                    salirDePreferencias()
+                    true
+                }else{
+                    binding.fragmentContainerView.visibility = View.VISIBLE
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView, SettingsFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    binding.exploreButton.text = getString(R.string.back)
+                    isInPreferences = true
+                    true
+                }
+
             }
 
             else -> false

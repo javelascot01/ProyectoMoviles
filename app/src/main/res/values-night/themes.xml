@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.ProyectoJesusVelasco" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:windowBackground">@color/fondo_aplicacion_oscuro</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:buttonStyle">@style/MyButtonStyle</item>
     </style>
+    <style name="Theme.ProyectoJesusVelasco" parent="Base.Theme.ProyectoJesusVelasco" />
 </resources>
