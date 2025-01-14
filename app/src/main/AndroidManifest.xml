@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoJesusVelasco">
         <activity
+            android:name=".view.PantallaDetalleRuta"
+            android:exported="false" />
+        <activity
             android:name=".view.AlertDialogEj"
             android:exported="false" />
         <activity

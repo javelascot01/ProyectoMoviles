@@ -68,5 +68,6 @@
     <string name="nigth_theme">Modo noche</string>
     <string name="enable_night_theme">Activar modo noche</string>
     <string name="desea_a_adir_la_ruta">¿Desea añadir la ruta?</string>
+    <string name="ver_detalle">Ver Detalle</string>
 
 </resources>

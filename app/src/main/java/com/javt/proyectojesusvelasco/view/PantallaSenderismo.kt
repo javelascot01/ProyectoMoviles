@@ -13,15 +13,18 @@ import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.ActivityPantallaSenderismoBinding
 import com.javt.proyectojesusvelasco.model.Dificultad
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
+import com.javt.proyectojesusvelasco.view.adapter.PagerAdapter
+import com.javt.proyectojesusvelasco.view.adapter.PagerAdapterDificultad
 import com.javt.proyectojesusvelasco.viewModel.RutasSenderismoViewModel
 
 class PantallaSenderismo : AppCompatActivity() {
     private lateinit var binding: ActivityPantallaSenderismoBinding
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager2: ViewPager2
-    private lateinit var adapter: PagerAdapter
-
-    private val viewModel: RutasSenderismoViewModel by viewModels()
+    //private lateinit var adapter: PagerAdapter
+    private lateinit var adapter: PagerAdapterDificultad
+    private lateinit var rutasPorDificultad : Map<Dificultad, List<RutasSenderismo>>
+        private val viewModel: RutasSenderismoViewModel by viewModels()
     @Suppress("DEPRECATION")
     private val agregarRutaLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -29,6 +32,7 @@ class PantallaSenderismo : AppCompatActivity() {
         if (result.resultCode == RESULT_OK) {
             val nuevaRuta = result.data?.getSerializableExtra("nuevaRuta") as? RutasSenderismo
             nuevaRuta?.let { viewModel.agregarRuta(it) }
+            rutasPorDificultad = viewModel.obtenerRutas().groupBy { it.dificultad }
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,11 +43,16 @@ class PantallaSenderismo : AppCompatActivity() {
 
         // Inicializo las rutas y las agregos al ViewModel
         inicializarRutas()
-
+        rutasPorDificultad = viewModel.obtenerRutas().groupBy { it.dificultad }
         // Inicializo el TabLayout y ViewPager2
         tabLayout = binding.tabLayout
         viewPager2 = binding.viewPager2
 
+
+        // ANTIGUO
+
+
+        /*
         // Configuro el adaptador para el ViewPager2
         adapter = PagerAdapter(this, viewModel.obtenerRutas())
         viewPager2.adapter = adapter
@@ -63,7 +72,23 @@ class PantallaSenderismo : AppCompatActivity() {
             TabLayoutMediator(tabLayout, viewPager2) { tab, index ->
                 tab.text = rutas[index].nombre
             }.attach()
-        }
+        }*/
+
+
+        // Nuevo
+
+        adapter = PagerAdapterDificultad(this, rutasPorDificultad)
+        viewPager2.adapter = adapter
+
+        // Configurar el TabLayout con el ViewPager2
+        TabLayoutMediator(tabLayout, viewPager2) { tab, index ->
+            val dificultad = Dificultad.entries[index]
+            tab.text = dificultad.aString(this)
+        }.attach()
+
+
+
+
 
         // Funcionalidad del botón Consejos
         binding.btnConsejos.visibility = View.VISIBLE
@@ -109,5 +134,12 @@ class PantallaSenderismo : AppCompatActivity() {
             "5",
             Dificultad.MEDIA,
             120))
+    }
+
+    override fun onResume() {
+        super.onResume()
+        rutasPorDificultad = viewModel.obtenerRutas().groupBy { it.dificultad }
+        adapter = PagerAdapterDificultad(this, rutasPorDificultad)
+        viewPager2.adapter = adapter
     }
 }
