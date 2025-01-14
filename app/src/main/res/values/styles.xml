@@ -4,9 +4,12 @@
     <!-- Tema para AlertDialog -->
     <style name="MyAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <!-- Fondo del diálogo -->
-        <item name="android:background">@color/oro</item>
+        <item name="android:background">@color/fondo_aplicacion_oscuro</item>
         <!-- Color del texto principal (título, mensaje) -->
-        <item name="android:textColorPrimary">@color/color_texto</item>
+        <item name="android:textColor">@color/white</item>
+        <!-- Estilo del texto (opcional, para títulos y botones) -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
         <!-- Estilo del texto (opcional, para títulos y botones) -->
         <item name="android:textAppearance">@style/MyDialogTextAppearance</item>
         <!-- Personalización de los botones -->
@@ -18,13 +21,14 @@
 
     <!-- Estilo del texto en AlertDialog -->
     <style name="MyDialogTextAppearance" parent="TextAppearance.AppCompat.Body1">
-        <item name="android:textColor">@color/color_texto</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/montserrat_regular</item>
     </style>
 
     <!-- Estilo personalizado para botones -->
     <style name="MyButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
         <item name="android:textAppearance">@style/MyDialogTextAppearance</item>
         <item name="android:textColor">@color/color_texto</item>
         <item name="android:textStyle">bold</item>

@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.javt.proyectojesusvelasco.R
+import com.javt.proyectojesusvelasco.databinding.AlertDialogAgregarRutaBinding
+import com.javt.proyectojesusvelasco.databinding.DialogoPersonalizadoBinding
 import com.javt.proyectojesusvelasco.databinding.FragmentAgregarRutaBinding
 import com.javt.proyectojesusvelasco.model.Dificultad
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
@@ -28,13 +31,16 @@ class AgregarRutaFragment : Fragment() {
 
         // Configuro el botón para guardar la nueva ruta
         binding.btnGuardar.setOnClickListener {
+            showCustomInputAlertDialog(view)
+
+
             val nombre = binding.etNombre.text.toString()
             val descripcion = binding.etDescripcion.text.toString()
             val distancia = binding.etDistancia.text.toString()
 
             // Validar dificultad según los radioButton
             val spinner: Spinner? = binding.spinner2
-            val dificultades = Dificultad.values().map { it.aString(this.requireContext()) }
+            val dificultades = Dificultad.entries.map { it.aString(this.requireContext()) }
             val adapter = ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, dificultades)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             if (spinner != null) {
@@ -67,5 +73,16 @@ class AgregarRutaFragment : Fragment() {
         }
 
         return view
+    }
+    fun showCustomInputAlertDialog(view: View) {
+        val builder = AlertDialog.Builder(this.requireContext(), R.style.MyAlertDialogTheme)
+        val bindingDialog = AlertDialogAgregarRutaBinding.inflate(layoutInflater)
+
+        builder.setView(bindingDialog.root)
+            .setPositiveButton("OK") { dialogInterface, i ->
+                // Acción al hacer clic en OK
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 }

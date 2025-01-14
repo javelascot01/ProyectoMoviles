@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.MaterialToolbar
@@ -147,8 +148,20 @@ class PantallaPrincipal : AppCompatActivity() {
                 }
             }
         } else {
+            showListAlertDialog();
             Toast.makeText(this, R.string.error_seleccion, Toast.LENGTH_SHORT).show()
             Log.w("Jesus", "Actividad no seleccionada")
         }
+    }
+    private fun showListAlertDialog() {
+        val items = arrayOf("Item 1", "Item 2", "Item 3") //este array podría venir cargado de un fichero o una BBDD.
+        AlertDialog.Builder(this)
+            .setTitle("Debes seleccionar una de las siguientes opciones:")
+            .setItems(items) { dialog, which ->
+                // Handle item selection
+                Toast.makeText(this, "Selected: ${items[0]}", Toast.LENGTH_SHORT).show()
+            }
+
+            .show()
     }
 }
