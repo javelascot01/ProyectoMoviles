@@ -21,6 +21,8 @@ class AgregarRutaFragment : Fragment() {
 
     private lateinit var binding: FragmentAgregarRutaBinding
     private var isAgregarRuta=false;
+    private lateinit var dificultades: List<String>
+    private lateinit var spinner: Spinner
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,8 +30,8 @@ class AgregarRutaFragment : Fragment() {
         binding = FragmentAgregarRutaBinding.inflate(inflater, container, false)
         val view = binding.root
         // Validar dificultad según los radioButton
-        val spinner: Spinner? = binding.spinner2
-        val dificultades = Dificultad.entries.map { it.aString(this.requireContext()) }
+        spinner = binding.spinner2!!
+        dificultades = Dificultad.entries.map { it.aString(this.requireContext()) }
         val adapter = ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, dificultades)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         if (spinner != null) {
@@ -38,7 +40,7 @@ class AgregarRutaFragment : Fragment() {
 
         // Configuro el botón para guardar la nueva ruta
         binding.btnGuardar.setOnClickListener {
-            showCustomInputAlertDialog(view)
+            showCustomInputAlertDialog()/*
             if(isAgregarRuta){
                 val nombre = binding.etNombre.text.toString()
                 val descripcion = binding.etDescripcion.text.toString()
@@ -60,7 +62,7 @@ class AgregarRutaFragment : Fragment() {
                     // Cerrar fragmento
                     activity?.finish()
                 }
-            }
+            }*/
         }
 
         // Configuro el botón de cancelar
@@ -71,14 +73,34 @@ class AgregarRutaFragment : Fragment() {
         return view
     }
 
-    private fun showCustomInputAlertDialog(view: View) {
+    private fun showCustomInputAlertDialog() {
         val builder = AlertDialog.Builder(this.requireContext(), R.style.MyAlertDialogTheme)
         val bindingDialog = AlertDialogAgregarRutaBinding.inflate(layoutInflater)
         builder.setView(bindingDialog.root)
             .setPositiveButton("OK") { dialogInterface, i ->
-                isAgregarRuta=true
+                // Validar los campos al confirmar
+                val nombre = binding.etNombre.text.toString()
+                val descripcion = binding.etDescripcion.text.toString()
+                val distancia = binding.etDistancia.text.toString()
+                val dificultad = Dificultad.entries[dificultades.indexOf(spinner?.selectedItem.toString())]
+
+                // Validar que todos los campos estén completos
+                val duracion = binding.etDuracion.text.toString().toIntOrNull()
+                if (nombre.isBlank() || descripcion.isBlank() || distancia.isBlank() || dificultad == null || duracion == null) {
+                    // Mostrar mensaje de error si algún campo está vacío
+                    Toast.makeText(context, getString(R.string.error_seleccion), Toast.LENGTH_SHORT).show()
+                } else {
+                    // Crear la nueva ruta y agregarla al ViewModel
+                    val nuevaRuta = RutasSenderismo(1, nombre, descripcion, distancia, dificultad, duracion)
+                    // Enviar la ruta a la actividad para que la guarde
+                    val intent = activity?.intent
+                    intent?.putExtra("nuevaRuta", nuevaRuta)
+                    activity?.setResult(AppCompatActivity.RESULT_OK, intent)
+                    // Cerrar el fragmento después de guardar
+                    activity?.finish()
+                }
             }
-            .setNegativeButton("Cancel", null)
+            .setNegativeButton("Cancel", null) // No hace nada al cancelar
             .show()
     }
 }
