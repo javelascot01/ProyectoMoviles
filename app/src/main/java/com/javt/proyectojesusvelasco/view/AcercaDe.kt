@@ -28,9 +28,6 @@ class AcercaDe : AppCompatActivity() {
         )
         //Lo convierto en string separando con saltos de linea
         binding.txtAcercaDe1.text = acercaDeInfo.joinToString("\n")
-        // Botón de cerrar aplicación
-        binding.btnVolver.setOnClickListener(){
-            finish() // Cierra la actividad actual y regresa a la anterior
-        }
+
     }
 }

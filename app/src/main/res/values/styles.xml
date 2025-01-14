@@ -4,9 +4,9 @@
     <!-- Tema para AlertDialog -->
     <style name="MyAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <!-- Fondo del diálogo -->
-        <item name="android:background">@color/oro</item>
+        <item name="android:background">@color/azul_oscuro</item>
         <!-- Color del texto principal (título, mensaje) -->
-        <item name="android:textColorPrimary">@color/color_texto</item>
+        <item name="android:textColorPrimary">@color/white</item>
         <!-- Estilo del texto (opcional, para títulos y botones) -->
         <item name="android:textAppearance">@style/MyDialogTextAppearance</item>
         <!-- Personalización de los botones -->

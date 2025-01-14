@@ -2,20 +2,22 @@
 <resources>
 
     <!-- Tema para AlertDialog -->
-    <style name="MyAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <style name="MyAlertDialogTheme" parent="Theme.Material3.Dark.Dialog.Alert">
         <!-- Fondo del diálogo -->
-        <item name="android:background">@color/oro</item>
+        <item name="android:background">@color/azul_oscuro</item>
         <!-- Color del texto principal (título, mensaje) -->
         <item name="android:textColorPrimary">@color/color_texto</item>
         <!-- Estilo del texto (opcional, para títulos y botones) -->
         <item name="android:textAppearance">@style/MyDialogTextAppearance</item>
         <!-- Personalización de los botones -->
-        <item name="android:textAppearanceButton">@style/MyButtonStyle</item>
-        <item name="android:buttonBarPositiveButtonStyle">@style/MyButtonStyle</item>
-        <item name="android:buttonBarNegativeButtonStyle">@style/MyButtonStyle</item>
-        <item name="android:buttonBarNeutralButtonStyle">@style/MyButtonStyle</item>
+        <item name="android:textAppearanceButton">@style/botonDialogoStyle</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/botonDialogoStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/botonDialogoStyle</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/botonDialogoStyle</item>
     </style>
-
+    <style name="botonDialogoStyle" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/white</item>
+    </style>
     <!-- Estilo del texto en AlertDialog -->
     <style name="MyDialogTextAppearance" parent="TextAppearance.AppCompat.Body1">
         <item name="android:textColor">@color/color_texto</item>
@@ -49,7 +51,8 @@
     </style>
 
     <style name="editTextStyle">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/hint</item>
     </style>
 
 </resources>

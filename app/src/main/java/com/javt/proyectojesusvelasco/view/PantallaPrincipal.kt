@@ -25,7 +25,7 @@ class PantallaPrincipal : AppCompatActivity() {
     private var isInPreferences = false // Variable para controlar si estoy en preferencias
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
         binding = PantallaPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // Configurar el spinner con las actividades disponibles
@@ -40,7 +40,6 @@ class PantallaPrincipal : AppCompatActivity() {
         // Inicializo SharedPreferences para leer los valores guardados
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         // Leer el valor de las preferencias
-        val isDarkThemeEnabled = sharedPreferences.getBoolean("pref_checkbox", false)
         val userName = sharedPreferences.getString("pref_texto", getString(R.string.usuario))
 
         // Configurar el toolbar
@@ -117,7 +116,13 @@ class PantallaPrincipal : AppCompatActivity() {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val userName = sharedPreferences.getString("pref_texto", getString(R.string.usuario))
         binding.toolbar.title = "$userName"
-
+        val isDarkModePreferenced=sharedPreferences.getBoolean("pref_checkbox",false)
+        if(isDarkModePreferenced){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+        //recreate()
     }
     // Función para salir de preferencias
     private fun salirDePreferencias() {

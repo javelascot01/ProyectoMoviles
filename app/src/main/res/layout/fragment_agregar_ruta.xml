@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/etNombre"
-        android:layout_width="0dp"
         style="@style/editTextStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
@@ -28,11 +28,12 @@
 
     <EditText
         android:id="@+id/etDescripcion"
+        style="@style/editTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
-        android:background="@color/fondo_aplicacion_oscuro"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_regular"
         android:hint="@string/descripcion"
         android:inputType="text"
@@ -48,11 +49,12 @@
 
     <EditText
         android:id="@+id/etDistancia"
+        style="@style/editTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
-        android:background="@color/fondo_aplicacion_oscuro"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_regular"
         android:hint="@string/distancia"
         android:inputType="text"
@@ -68,13 +70,14 @@
 
     <EditText
         android:id="@+id/etDuracion"
+        style="@style/editTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20sp"
         android:layout_marginTop="92dp"
         android:layout_marginRight="20sp"
         android:layout_marginBottom="20dp"
-        android:background="@color/fondo_aplicacion_oscuro"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_regular"
         android:hint="@string/duracion"
         android:inputType="text"
@@ -126,6 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_edittext"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/etDuracion"
         app:layout_constraintEnd_toEndOf="parent"

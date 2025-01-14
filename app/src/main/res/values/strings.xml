@@ -67,4 +67,5 @@
     <string name="webpage_github">https://github.com/javelascot01/ProyectoMoviles</string>
     <string name="nigth_theme">Nigth Theme</string>
     <string name="enable_night_theme">Enable Night Theme</string>
+    <string name="desea_a_adir_la_ruta">Do you want to add the route?</string>
 </resources>
