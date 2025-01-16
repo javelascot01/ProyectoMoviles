@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoJesusVelasco">
         <activity
+            android:name=".view.PantallaPrincipal"
+            android:exported="false" />
+        <activity
             android:name=".view.PantallaDetalleRuta"
             android:exported="false" />
         <activity
@@ -37,7 +40,7 @@
             android:configChanges="keyboardHidden|screenSize"
             android:exported="false" />
         <activity
-            android:name=".view.PantallaPrincipal"
+            android:name=".view.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

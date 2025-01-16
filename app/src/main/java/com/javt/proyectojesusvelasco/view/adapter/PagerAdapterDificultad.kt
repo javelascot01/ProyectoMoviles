@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.javt.proyectojesusvelasco.model.Dificultad
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
-import com.javt.proyectojesusvelasco.view.RutaFragment
+import com.javt.proyectojesusvelasco.view.RutasFragment
 
 
 class PagerAdapterDificultad(

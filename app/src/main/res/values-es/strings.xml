@@ -69,5 +69,8 @@
     <string name="enable_night_theme">Activar modo noche</string>
     <string name="desea_a_adir_la_ruta">¿Desea añadir la ruta?</string>
     <string name="ver_detalle">Ver Detalle</string>
+    <string name="login_with_google">Iniciar sesion con Google</string>
+    <string name="register">Registrarse</string>
+    <string name="login">Iniciar sesion</string>
 
 </resources>

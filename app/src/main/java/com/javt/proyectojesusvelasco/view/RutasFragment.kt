@@ -1,5 +1,8 @@
+package com.javt.proyectojesusvelasco.view
+
 import android.R
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +11,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.javt.proyectojesusvelasco.databinding.FragmentRutasBinding
+import com.javt.proyectojesusvelasco.model.Dificultad
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
-import com.javt.proyectojesusvelasco.view.PantallaDetalleRuta
 
 class RutasFragment : Fragment() {
 
@@ -32,13 +36,11 @@ class RutasFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentRutasBinding.inflate(inflater, container, false)
-
         // Inicializamos el Spinner y el botón
         spinner = binding.spinnerRutas
         btnVerDetalle = binding.btnVerDetalle
-
         // Configurar el Spinner
         val adapter = ArrayAdapter(
             requireContext(),
@@ -68,4 +70,5 @@ class RutasFragment : Fragment() {
 
         return binding.root
     }
+
 }
