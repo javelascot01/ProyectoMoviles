@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("org.jetbrains.kotlin.kapt")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -54,6 +55,7 @@ dependencies {
     implementation(libs.androidx.preference)
     implementation(libs.androidx.preference.ktx)
     implementation(libs.androidx.espresso.core)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

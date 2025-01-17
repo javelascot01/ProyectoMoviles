@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "337038116971",
+    "project_id": "proyectojesusvelasco",
+    "storage_bucket": "proyectojesusvelasco.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337038116971:android:3bd82fde8b99812216892e",
+        "android_client_info": {
+          "package_name": "com.javt.proyectojesusvelasco"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYIbrGQuRPNHE75bnnysYLR1GRCzyeNd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
