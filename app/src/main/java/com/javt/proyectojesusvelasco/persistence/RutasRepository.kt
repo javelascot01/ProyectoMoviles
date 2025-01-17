@@ -5,7 +5,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
 
-class RutasRepository {
+class RutasRepository { // SOLO UN REPOSITORIO
     private var databaseReference : DatabaseReference
     private val URL_REFERENCIA_DATABASE="https://proyectojesusvelasco-default-rtdb.europe-west1.firebasedatabase.app/"
     init {
