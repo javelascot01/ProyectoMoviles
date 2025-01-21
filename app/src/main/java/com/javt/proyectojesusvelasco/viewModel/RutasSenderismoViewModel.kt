@@ -1,28 +1,42 @@
 package com.javt.proyectojesusvelasco.viewModel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.javt.proyectojesusvelasco.R
+import androidx.lifecycle.viewModelScope
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
+import com.javt.proyectojesusvelasco.persistence.Repository
+import kotlinx.coroutines.launch
 
 class RutasSenderismoViewModel : ViewModel() {
-    private val _rutas = MutableLiveData<MutableList<RutasSenderismo>>(mutableListOf())
-    val rutas: LiveData<MutableList<RutasSenderismo>> get() = _rutas
+    private val _rutas = MutableLiveData<List<RutasSenderismo>>()
+    private val repository = Repository()
+    val rutas: MutableLiveData<List<RutasSenderismo>> = repository.getRutas()
 
     init {
-        _rutas.value = mutableListOf() // Inicializo la lista vacia
+        fetchRutasFromRepository()
     }
-    // Funcion para obtener todas las rutas
+
+    private fun fetchRutasFromRepository() {
+        viewModelScope.launch {
+            repository.getRutas().observeForever { rutasList ->
+                if (rutasList != null) {
+                    _rutas.postValue(rutasList)
+                    Log.d("RutasRecibidas", "Rutas recibidas: ${_rutas.value}")
+                }
+            }
+        }
+    }
+
     fun obtenerRutas(): List<RutasSenderismo> {
         return _rutas.value.orEmpty()
     }
 
-    // Función para agregar una nueva ruta
     fun agregarRuta(ruta: RutasSenderismo) {
-        // Añadir la ruta a la lista actual
-        val nuevaLista = _rutas.value ?: mutableListOf()
+        val nuevaLista = _rutas.value?.toMutableList() ?: mutableListOf()
         nuevaLista.add(ruta)
-        _rutas.value = nuevaLista // Esto notificará a los observadores
+        _rutas.value = nuevaLista
+        repository.addRuta(ruta)
     }
 }

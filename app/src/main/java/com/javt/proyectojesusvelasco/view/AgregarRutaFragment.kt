@@ -91,7 +91,7 @@ class AgregarRutaFragment : Fragment() {
                     Toast.makeText(context, getString(R.string.error_seleccion), Toast.LENGTH_SHORT).show()
                 } else {
                     // Crear la nueva ruta y agregarla al ViewModel
-                    val nuevaRuta = RutasSenderismo(1, nombre, descripcion, distancia, dificultad, duracion)
+                    val nuevaRuta = RutasSenderismo(null, nombre, descripcion, distancia, dificultad, duracion)
                     // Enviar la ruta a la actividad para que la guarde
                     val intent = activity?.intent
                     intent?.putExtra("nuevaRuta", nuevaRuta)

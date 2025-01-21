@@ -12,16 +12,20 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.viewModelScope
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.MaterialToolbar
 import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.PantallaPrincipalBinding
+import com.javt.proyectojesusvelasco.viewModel.RutasSenderismoViewModel
 
 class PantallaPrincipal : AppCompatActivity() {
     private lateinit var binding : PantallaPrincipalBinding
     private lateinit var sharedPreferences: SharedPreferences
+    private val viewModel: RutasSenderismoViewModel by viewModels()
     private var isInPreferences = false // Variable para controlar si estoy en preferencias
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
