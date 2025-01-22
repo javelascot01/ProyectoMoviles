@@ -3,13 +3,13 @@
     <string-array name="acerca_de">
         <item>Nature App</item>
         <item>Una aplicacion para explorar la naturaleza en tu área</item>
-        <item>Version 1.0.0</item>
+        <item>Version 1.0.1</item>
         <item>DDesarrollado por Jesús Velasco</item>
         <item>Contacto: alexvelas23@gmail.com</item>
     </string-array>
     <string name="app_name">Nature App</string>
     <string name="app_description">Una aplicacion para explorar la naturaleza en tu área</string>
-    <string name="version">Versión 1.0.0</string>
+    <string name="version">Versión 1.0.1</string>
     <string name="developer">Desarrollado por Jesús Velasco</string>
     <string name="contact">Contacto: alexvelas23@gmail.com</string>
     <string name="nature">Naturaleza</string>
@@ -72,5 +72,12 @@
     <string name="login_with_google">Iniciar sesion con Google</string>
     <string name="register">Registrarse</string>
     <string name="login">Iniciar sesion</string>
+    <string name="password">Password</string>
+    <string name="advices">Consejos</string>
+    <string name="user_admin">Usuario: admin</string>
+    <string name="password_admin">Contraseña: admin</string>
+    <string name="information">Información</string>
+    <string name="default_values">Valores por defecto:</string>
+    <string name="accept">Aceptar</string>
 
 </resources>

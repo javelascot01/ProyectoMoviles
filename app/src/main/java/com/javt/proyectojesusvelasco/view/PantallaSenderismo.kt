@@ -19,10 +19,10 @@ import com.javt.proyectojesusvelasco.viewModel.RutasSenderismoViewModel
 import java.lang.Thread.sleep
 
 class PantallaSenderismo : AppCompatActivity() {
+    // Atributos
     private lateinit var binding: ActivityPantallaSenderismoBinding
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager2: ViewPager2
-    //private lateinit var adapter: PagerAdapter
     private lateinit var adapter: PagerAdapterDificultad
     private lateinit var rutasPorDificultad : Map<Dificultad, List<RutasSenderismo>>
     private val viewModel: RutasSenderismoViewModel by viewModels()
@@ -37,15 +37,12 @@ class PantallaSenderismo : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-
         binding = ActivityPantallaSenderismoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         tabLayout = binding.tabLayout
         viewPager2 = binding.viewPager2
 
-        // Inicializo el TabLayout y ViewPager2
+        // Cargo las rotas en el ViewModel y las muestro en el ViewPager2 con un TabLayout para filtrar por dificultad
         viewModel.rutas.observe(this) { rutas ->
             if (rutas != null) {
                 Log.d("RutasActualizadas", "Rutas recibidas: $rutas")
@@ -70,20 +67,21 @@ class PantallaSenderismo : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Funcionalidad del botón Volver
-        binding.btnVolver.setOnClickListener {
-            finish() // Volver a la pantalla anterior
-        }
-
         // Funcionalidad del botón Agregar Ruta
         binding.btnAgregarRuta.setOnClickListener {
             val intent = Intent(this, ContenedorFragmentAgregarRuta::class.java)
             agregarRutaLauncher.launch(intent)
         }
     }
+    override fun onResume() {
+        super.onResume()
+        rutasPorDificultad = viewModel.obtenerRutas().groupBy { it.dificultad }
+        adapter = PagerAdapterDificultad(this, rutasPorDificultad)
+        viewPager2.adapter = adapter
+    }
 
     /**
-     * Inicializa las rutas y las agrega al ViewModel
+     *  Metodo para inicializar las rutas
      */
     /*
     private fun inicializarRutas() {
@@ -108,11 +106,4 @@ class PantallaSenderismo : AppCompatActivity() {
             Dificultad.MEDIA,
             120))
     }*/
-
-    override fun onResume() {
-        super.onResume()
-        rutasPorDificultad = viewModel.obtenerRutas().groupBy { it.dificultad }
-        adapter = PagerAdapterDificultad(this, rutasPorDificultad)
-        viewPager2.adapter = adapter
-    }
 }

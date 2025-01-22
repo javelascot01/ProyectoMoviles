@@ -8,4 +8,8 @@
     <color name="hint">#A3FFFFFF</color>
     <color name="oro">#FFCE42</color>
     <color name="azul_oscuro">#214352</color>
+    <color name="borde_edittext">#795548</color>
+    <color name="boton_info">#795548</color>
+    <color name="item_no_seleccionado">#C8E6C9 </color>
+    <color name="item_seleccionado">#81C784  </color>
 </resources>

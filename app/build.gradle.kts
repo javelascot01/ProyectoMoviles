@@ -44,9 +44,12 @@ android {
 }
 
 dependencies {
+    implementation (libs.play.services.identity)
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.fragment:fragment-ktx:1.8.5")
     implementation("com.google.android.material:material:1.12.0")
+    implementation (libs.firebase.auth)
+    implementation(libs.play.services.auth)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -56,6 +59,9 @@ dependencies {
     implementation(libs.androidx.preference.ktx)
     implementation(libs.androidx.espresso.core)
     implementation(libs.firebase.database)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.identity.credential)
+    implementation(libs.play.services.fido)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

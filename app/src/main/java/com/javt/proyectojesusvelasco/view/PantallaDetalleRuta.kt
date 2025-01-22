@@ -16,14 +16,15 @@ class PantallaDetalleRuta : AppCompatActivity() {
         binding = ActivityPantallaDetalleRutaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Obtengo la ruta del intent
         val ruta = intent.getSerializableExtra("ruta", RutasSenderismo::class.java)
         binding.txtDescripcionRuta.text = ruta?.descripcion
-        binding.txtDistanciaRuta.text = buildString { // Concatenación de cadenas recomendado por el ide
+        binding.txtDistanciaRuta.text = buildString {
             append(ruta?.distancia)
             append(getString(R.string.km))
         }
         binding.txtDificultadRuta.text = ruta?.dificultad?.aString(this)
-        binding.txtDuracionRuta.text = buildString { // Concatenación de cadenas recomendado por el ide
+        binding.txtDuracionRuta.text = buildString {
             append(ruta?.duracion.toString())
             append(" ")
             append(getString(R.string.minutos))

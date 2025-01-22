@@ -20,8 +20,5 @@ class ContenedorFragmentAgregarRuta : AppCompatActivity() {
         val fragmento=AgregarRutaFragment()
         val fragmentTransaction=supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerAgregar, fragmento)
         fragmentTransaction.commit()
-
-
-
     }
 }

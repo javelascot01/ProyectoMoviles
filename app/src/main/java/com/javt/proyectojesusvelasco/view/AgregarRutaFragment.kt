@@ -29,14 +29,11 @@ class AgregarRutaFragment : Fragment() {
     ): View {
         binding = FragmentAgregarRutaBinding.inflate(inflater, container, false)
         val view = binding.root
-        // Validar dificultad según los radioButton
         spinner = binding.spinner2!!
         dificultades = Dificultad.entries.map { it.aString(this.requireContext()) }
         val adapter = ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, dificultades)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        if (spinner != null) {
-            spinner.adapter = adapter
-        }
+        spinner.adapter = adapter
 
         // Configuro el botón para guardar la nueva ruta
         binding.btnGuardar.setOnClickListener {
@@ -73,6 +70,9 @@ class AgregarRutaFragment : Fragment() {
         return view
     }
 
+    /**
+     * Muestra un diálogo de alerta personalizado para introducir los datos de la nueva ruta.
+     */
     private fun showCustomInputAlertDialog() {
         val builder = AlertDialog.Builder(this.requireContext(), R.style.MyAlertDialogTheme)
         val bindingDialog = AlertDialogAgregarRutaBinding.inflate(layoutInflater)

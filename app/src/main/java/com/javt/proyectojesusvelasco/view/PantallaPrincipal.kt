@@ -15,21 +15,29 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.MaterialToolbar
 import com.javt.proyectojesusvelasco.R
 import com.javt.proyectojesusvelasco.databinding.PantallaPrincipalBinding
 import com.javt.proyectojesusvelasco.viewModel.RutasSenderismoViewModel
+import com.javt.proyectojesusvelasco.viewModel.UsuarioViewModel
 
 class PantallaPrincipal : AppCompatActivity() {
     private lateinit var binding : PantallaPrincipalBinding
     private lateinit var sharedPreferences: SharedPreferences
-    private val viewModel: RutasSenderismoViewModel by viewModels()
+    private lateinit var userName : String
+    private lateinit var key : String
+    private val viewModel: UsuarioViewModel by viewModels()
     private var isInPreferences = false // Variable para controlar si estoy en preferencias
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        // Obtengo el nombre de usuario de la pantalla de login
+        userName= intent.getStringExtra("nombreUsuario").toString()
+        key= intent.getStringExtra("idUsuario").toString()
+        Log.d("idUsuario", key)
         binding = PantallaPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // Configurar el spinner con las actividades disponibles
@@ -44,13 +52,18 @@ class PantallaPrincipal : AppCompatActivity() {
         // Inicializo SharedPreferences para leer los valores guardados
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         // Leer el valor de las preferencias
-        val userName = sharedPreferences.getString("pref_texto", getString(R.string.usuario))
+        if (userName == null) {
+            val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+            userName = sharedPreferences.getString("pref_texto", getString(R.string.usuario)).toString()
+        }
 
         // Configurar el toolbar
         val toolbar: MaterialToolbar =binding.toolbar
         setSupportActionBar(toolbar)
         //supportActionBar?.setDisplayHomeAsUpEnabled(true)  // Muestra el icono de volver (no funciona)
-        binding.toolbar.title = "$userName"                // Muestro el nombre de usuario
+        binding.toolbar.title = userName                // Muestro el nombre de usuario
+
+
 
         // Configurar el botón de explore
         binding.exploreButton.setOnClickListener {
@@ -118,15 +131,21 @@ class PantallaPrincipal : AppCompatActivity() {
     /* Actualizo el título de el toolbar con el nombre del usuario guardado en preferencias */
     private fun actualizarTituloUsuario() {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val userName = sharedPreferences.getString("pref_texto", getString(R.string.usuario))
-        binding.toolbar.title = "$userName"
+        val newUserName = sharedPreferences.getString("pref_texto", getString(R.string.usuario)).toString()
+
+        if(newUserName != userName){
+            binding.toolbar.title = "$newUserName"
+            userName = newUserName
+            actualizarUsuarioEnBaseDeDatos(key, userName)
+        }else{
+            binding.toolbar.title = "$userName"
+        }
         val isDarkModePreferenced=sharedPreferences.getBoolean("pref_checkbox",false)
         if(isDarkModePreferenced){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }else{
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
-        //recreate()
     }
     // Función para salir de preferencias
     private fun salirDePreferencias() {
@@ -139,6 +158,7 @@ class PantallaPrincipal : AppCompatActivity() {
         val toast=Toast.makeText(this, getString(R.string.preferences_saved),Toast.LENGTH_SHORT)
         toast.show()
     }
+    // Función para manejar el botón de explorar según la actividad seleccionada
     private fun btnExploreManejo() {
         val actividadSeleccionada = binding.spinnerActividades.selectedItem.toString()
         Log.d("Jesus", "Actividad seleccionada: $actividadSeleccionada")
@@ -167,6 +187,17 @@ class PantallaPrincipal : AppCompatActivity() {
         } else {
             Toast.makeText(this, R.string.error_seleccion, Toast.LENGTH_SHORT).show()
             Log.w("Jesus", "Actividad no seleccionada")
+        }
+
+    }
+    // Función para actualizar el nombre de usuario en la base de datos
+    private fun actualizarUsuarioEnBaseDeDatos(idUsuario: String, nombreUsuario: String) {
+        viewModel.actualizarNombreUsuario(idUsuario, nombreUsuario) { exito ->
+            if (exito) {
+                Log.d("PantallaPrincipal", "Nombre de usuario actualizado en la base de datos")
+            } else {
+                Log.e("PantallaPrincipal", "Error al actualizar el nombre de usuario en la base de datos")
+            }
         }
     }
 }

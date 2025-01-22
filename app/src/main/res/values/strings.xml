@@ -2,13 +2,13 @@
     <string-array name="acerca_de">
         <item>Nature App</item>
         <item>An app to explore nature in your area</item>
-        <item>Version 1.0.0</item>
+        <item>Version 1.0.1</item>
         <item>Developed by Jesús Velasco</item>
         <item>Contact: alexvelas23@gmail.com</item>
     </string-array>
     <string name="app_name">Nature App</string>
     <string name="app_description">An app to explore nature in your area</string>
-    <string name="version">Version 1.0.0</string>
+    <string name="version">Version 1.0.1</string>
     <string name="developer">Developed by Jesús Velasco</string>
     <string name="contact">Contact: alexvelas23@gmail.com</string>
 
@@ -72,4 +72,12 @@
     <string name="login_with_google">Login with Google</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="advices">Advices</string>
+    <string name="user_admin">User: admin</string>
+    <string name="password_admin">Password: admin</string>
+    <string name="information">Information</string>
+    <string name="default_values">Default values:</string>
+    <string name="accept">Accept</string>
+    <string name="default_web_client_id">337038116971-9lgg0d6f348tt3ii8693i8jjvc9r8tgb.apps.googleusercontent.com</string>
 </resources>

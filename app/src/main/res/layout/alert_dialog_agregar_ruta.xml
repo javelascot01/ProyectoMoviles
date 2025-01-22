@@ -21,5 +21,7 @@
         style="@style/MyAlertDialogTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/desea_a_adir_la_ruta"></TextView>
+        android:text="@string/desea_a_adir_la_ruta"
+        android:textColor="@color/white"
+        android:textSize="14sp"></TextView>
 </LinearLayout>

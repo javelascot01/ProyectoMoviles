@@ -4,22 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
-
     <TextView
         android:id="@+id/lblDescripcionRuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/descripcion"
-        android:textColor="@color/color_texto"
-        app:layout_constraintBottom_toTopOf="@+id/lblDistanciaRuta"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline22"
+        app:layout_constraintEnd_toStartOf="@+id/guideline21"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
@@ -27,23 +23,29 @@
         android:id="@+id/lblDistanciaRuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/distancia"
-        android:textColor="@color/color_texto"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/lblDificultadRuta"
-        app:layout_constraintEnd_toEndOf="@+id/lblDescripcionRuta"
+        app:layout_constraintEnd_toStartOf="@+id/guideline21"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/lblDescripcionRuta"
-        app:layout_constraintTop_toBottomOf="@+id/lblDescripcionRuta" />
+        app:layout_constraintTop_toTopOf="@+id/guideline22" />
 
     <TextView
         android:id="@+id/lblDificultadRuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/dificultad"
-        android:textColor="@color/color_texto"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/lblDuracionRuta"
-        app:layout_constraintEnd_toEndOf="@+id/lblDistanciaRuta"
+        app:layout_constraintEnd_toStartOf="@+id/txtDificultadRuta"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/lblDistanciaRuta"
         app:layout_constraintTop_toBottomOf="@+id/lblDistanciaRuta" />
 
@@ -51,11 +53,14 @@
         android:id="@+id/lblDuracionRuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/duracion"
-        android:textColor="@color/color_texto"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/lblDificultadRuta"
+        app:layout_constraintEnd_toStartOf="@+id/txtDuracionRuta"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/lblDificultadRuta"
         app:layout_constraintTop_toBottomOf="@+id/lblDificultadRuta" />
 
@@ -64,52 +69,54 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:background="@color/fondo_aplicacion_oscuro"
-        android:backgroundTint="@color/fondo_aplicacion_oscuro"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/txtDistanciaRuta"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline22"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <TextView
         android:id="@+id/txtDistanciaRuta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/fondo_aplicacion_oscuro"
-        android:backgroundTint="@color/fondo_aplicacion_oscuro"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtDificultadRuta"
         app:layout_constraintEnd_toEndOf="@+id/txtDescripcionRuta"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescripcionRuta" />
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
+        app:layout_constraintTop_toTopOf="@+id/guideline22" />
 
     <TextView
         android:id="@+id/txtDificultadRuta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/fondo_aplicacion_oscuro"
-        android:backgroundTint="@color/fondo_aplicacion_oscuro"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtDuracionRuta"
         app:layout_constraintEnd_toEndOf="@+id/txtDistanciaRuta"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
         app:layout_constraintTop_toBottomOf="@+id/txtDistanciaRuta" />
 
     <TextView
         android:id="@+id/txtDuracionRuta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/fondo_aplicacion_oscuro"
-        android:backgroundTint="@color/fondo_aplicacion_oscuro"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txtDificultadRuta"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
         app:layout_constraintTop_toBottomOf="@+id/txtDificultadRuta" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -128,5 +135,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/_0804389_4569589" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="168dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="365dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,13 +18,14 @@ import com.javt.proyectojesusvelasco.model.Dificultad
 import com.javt.proyectojesusvelasco.model.RutasSenderismo
 
 class RutasFragment : Fragment() {
-
+    // Atributos
     private lateinit var rutas: List<RutasSenderismo>
     private lateinit var binding: FragmentRutasBinding
     private lateinit var spinner: Spinner
     private lateinit var btnVerDetalle: Button
     private lateinit var selectedRuta: RutasSenderismo
 
+    // Método de clase para crear una instancia del fragmento con una lista de rutas
     companion object {
         fun newInstance(rutas: List<RutasSenderismo>): RutasFragment {
             val fragment = RutasFragment()
@@ -38,10 +39,10 @@ class RutasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentRutasBinding.inflate(inflater, container, false)
-        // Inicializamos el Spinner y el botón
+        // Inicializo el Spinner y el botón
         spinner = binding.spinnerRutas
         btnVerDetalle = binding.btnVerDetalle
-        // Configurar el Spinner
+        // Configuro el Spinner
         val adapter = ArrayAdapter(
             requireContext(),
             R.layout.simple_spinner_item,
@@ -50,10 +51,10 @@ class RutasFragment : Fragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
-        // Manejar la selección de una ruta
+        // Manejo la selección de una ruta
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedRuta = rutas[position]  // Ruta seleccionada
+                selectedRuta = rutas[position]
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {

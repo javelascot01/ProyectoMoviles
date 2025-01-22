@@ -1,0 +1,22 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgIcono"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/advices" />
+
+    <TextView
+        android:id="@+id/txtConsejo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:text="Consejo"
+        android:textSize="16sp" />
+</LinearLayout>

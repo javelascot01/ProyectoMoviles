@@ -17,74 +17,18 @@ class Repository { // SOLO UN REPOSITORIO
     init {
         databaseReference= FirebaseDatabase.getInstance(URL_REFERENCIA_DATABASE).reference
     }
+    /**
+     *          METODOS DE RUTAS
+     */
+    /**
+     * Método que permite añadir una ruta a la base de datos
+     */
     fun addRuta(ruta: RutasSenderismo){
         val key=databaseReference.child("rutas").push().key
         if (key != null) {
             ruta.id=key
         }
         databaseReference.child("rutas").child(key!!).setValue(ruta)
-    }
-    fun addUsuario(usuario: Usuario) {
-        val key = databaseReference.child("usuarios").push().key
-        if (key != null) {
-            databaseReference.child("usuarios").child(key).setValue(usuario)
-        } else {
-            Log.e("Firebase", "Error al insertar")
-        }
-    }
-    fun loginUsuario(nombreUsuario: String, contrasena: String, onResult: (Boolean, String?) -> Unit) {
-        val databaseReference = FirebaseDatabase.getInstance(URL_REFERENCIA_DATABASE).getReference("usuarios")
-
-        Log.e("Login", "Consultando usuario: $nombreUsuario")
-
-        // Realizamos la consulta para buscar al usuario por nombreUsuario
-        databaseReference.orderByChild("nombreUsuario").equalTo(nombreUsuario).get()
-            .addOnSuccessListener { snapshot ->
-                Log.e("Login", "Consulta realizada con éxito")
-
-                if (snapshot.exists()) {
-                    Log.e("Login", "Usuario encontrado, verificando contraseña")
-
-                    // Iteramos sobre los resultados para obtener el usuario correspondiente
-                    snapshot.children.firstOrNull()?.let { userSnapshot ->
-                        val usuario = userSnapshot.getValue(Usuario::class.java)
-                        if (usuario != null) {
-                            // Comparamos la contraseña
-                            if (usuario.contrasena == contrasena) {
-                                Log.e("Login", "Login exitoso")
-                                onResult(true, "Login exitoso")
-                            } else {
-                                Log.e("Login", "Contraseña incorrecta")
-                                onResult(false, "Contraseña incorrecta")
-                            }
-                        } else {
-                            Log.e("Login", "Usuario no encontrado en el snapshot")
-                            onResult(false, "Usuario no encontrado")
-                        }
-                    }
-                } else {
-                    Log.e("Login", "No existe ningún usuario con ese nombre")
-                    onResult(false, "Usuario no encontrado")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.e("Login", "Error al realizar la consulta: ${exception.message}")
-                onResult(false, "Error al acceder a la base de datos: ${exception.message}")
-            }
-    }
-
-    fun registrarUsuario(nombreUsuario: String, contrasena: String) {
-        val databaseReference = FirebaseDatabase.getInstance().getReference("usuarios")
-        // Crear el usuario
-        val usuario = Usuario(nombreUsuario, contrasena)
-        // Guardar el usuario con su nombre de usuario como clave
-        databaseReference.child(nombreUsuario).setValue(usuario)
-            .addOnSuccessListener {
-                Log.d("Registro", "Usuario registrado con éxito")
-            }
-            .addOnFailureListener { exception ->
-                Log.e("Registro", "Error al registrar usuario: ${exception.message}")
-            }
     }
     fun getRutas():MutableLiveData<List<RutasSenderismo>>{
         val rutaList=MutableLiveData<List<RutasSenderismo>>()
@@ -110,4 +54,82 @@ class Repository { // SOLO UN REPOSITORIO
         Log.d("RutasRecibidas", rutaList.value.toString())
         return rutaList
     }
+
+    /**
+     *          METODOS DE USUARIOS
+     */
+
+
+    /**
+     * Método que permite loguear a un usuario en la aplicación
+     */
+    fun loginUsuario(nombreUsuario: String, contrasena: String, onResult: (Boolean, String?, String?) -> Unit) {
+        val databaseReference = FirebaseDatabase.getInstance(URL_REFERENCIA_DATABASE).getReference("usuarios")
+
+        Log.e("Login", "Consultando usuario: $nombreUsuario")
+
+        // Realizamos la consulta para buscar al usuario por nombreUsuario
+        databaseReference.orderByChild("nombreUsuario").equalTo(nombreUsuario).get()
+            .addOnSuccessListener { snapshot ->
+                Log.e("Login", "Consulta realizada con éxito")
+
+                if (snapshot.exists()) {
+                    Log.e("Login", "Usuario encontrado, verificando contraseña")
+
+                    // Iteramos sobre los resultados para obtener el usuario correspondiente
+                    snapshot.children.firstOrNull()?.let { userSnapshot ->
+                        val usuario = userSnapshot.getValue(Usuario::class.java)
+                        if (usuario != null) {
+                            // Comparamos la contraseña
+                            if (usuario.contrasena == contrasena) {
+                                Log.e("Login", "Login exitoso")
+                                val userKey = userSnapshot.key // Obtenemos la clave del usuario
+                                onResult(true, "Login exitoso", userKey)
+                            } else {
+                                Log.e("Login", "Contraseña incorrecta")
+                                onResult(false, "Contraseña incorrecta", null)
+                            }
+                        } else {
+                            Log.e("Login", "Usuario no encontrado en el snapshot")
+                            onResult(false, "Usuario no encontrado", null)
+                        }
+                    }
+                } else {
+                    Log.e("Login", "No existe ningún usuario con ese nombre")
+                    onResult(false, "Usuario no encontrado", null)
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Login", "Error al realizar la consulta: ${exception.message}")
+                onResult(false, "Error al acceder a la base de datos: ${exception.message}", null)
+            }
+    }
+
+    fun actualizarNombreUsuario(idUsuario: String, nuevoNombreUsuario: String, onResult: (Boolean) -> Unit) {
+        val databaseReference = FirebaseDatabase.getInstance().getReference("usuarios")
+        val userRef = databaseReference.child(idUsuario)
+        userRef.child("nombreUsuario").setValue(nuevoNombreUsuario)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d("Repository", "Nombre de usuario actualizado exitosamente.")
+                    onResult(true)
+                } else {
+                    Log.e("Repository", "Error al actualizar el nombre de usuario.", task.exception)
+                    onResult(false)
+                }
+            }
+    }
+
+    /**
+     * Método que permite añadir un usuario a la base de datos
+     */
+    fun addUsuario(usuario: Usuario) {
+        val key = databaseReference.child("usuarios").push().key
+        if (key != null) {
+            databaseReference.child("usuarios").child(key).setValue(usuario)
+        } else {
+            Log.e("Firebase", "Error al insertar")
+        }
+    }
+
 }

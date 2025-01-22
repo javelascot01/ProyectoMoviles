@@ -30,7 +30,6 @@
     <style name="MyButtonStyle" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/white</item>
         <item name="android:iconTint">@style/MyTextAppearance</item>
-        <item name="android:background"></item>"
         <item name="android:backgroundTint">@color/color_texto</item>
         <item name="android:textStyle">bold</item>
         <item name="android:icon">@style/MyTextAppearance</item>
