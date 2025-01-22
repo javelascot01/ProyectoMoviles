@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.credentials.CredentialManager
 import androidx.preference.PreferenceManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -25,6 +26,7 @@ class Login : AppCompatActivity() {
     private val viewModel: UsuarioViewModel by viewModels()
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var credentialManager: CredentialManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +42,7 @@ class Login : AppCompatActivity() {
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val valoresPorDefecto = arrayOf(R.string.user_admin.toString(),R.string.password_admin.toString())
+        val valoresPorDefecto = arrayOf(getString(R.string.user_admin),getString(R.string.password_admin))
 
         // Botones
         binding.btnInfo.setOnClickListener {
@@ -92,7 +94,7 @@ class Login : AppCompatActivity() {
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         firebaseAuth = FirebaseAuth.getInstance()
-
+        credentialManager = CredentialManager.create(this)
 
         binding.btnLoginGoogle.setOnClickListener {
             signInWithGoogle()
